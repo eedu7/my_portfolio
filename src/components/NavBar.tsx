@@ -21,6 +21,7 @@ import {MenuIcon} from "lucide-react";
 
 const NavBar = () => {
     const isDesktop: boolean = useMediaQuery("(min-width: 1024px)");
+
     if (isDesktop) {return (
             <NavigationMenu>
                 <NavigationMenuList>
