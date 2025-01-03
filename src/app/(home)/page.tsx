@@ -11,7 +11,7 @@ export default function Home() {
                 className="w-full z-10 h-full md:grid grid-cols-2 content-center max-w-screen-lg mx-auto mt-24 md:mt-0">
                 <div className="col-span-1 flex flex-col justify-center items-center mx-4">
                         <h1 className="z-10 whitespace-pre-wrap text-left text-xl w-full font-bold tracking-wide font-mono text-gray-500 dark:text-white">Hi
-                            !</h1>
+                            &#33;</h1>
                         <h1 className="z-10 whitespace-pre-wrap text-left text-4xl w-full font-extrabold tracking-wide text-titleColor font-mono dark:text-white">I'm
                             Mueed</h1>
                         <h1 className="z-10 whitespace-pre-wrap text-xl text-left w-full font-bold font-mono tracking-wide text-gray-400 dark:text-white">I'm
