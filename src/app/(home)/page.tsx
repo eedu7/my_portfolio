@@ -2,7 +2,7 @@ import DotPattern from "@/components/ui/dot-pattern";
 import {cn} from "@/lib/utils";
 import React from "react";
 import Image from "next/image";
-import HeroSectionImage from "../../../public/assets/images/hero_section_img.png";
+import HeroSectionImage from "@/constants/images";
 
 export default function Home() {
   return (
