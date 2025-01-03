@@ -7,7 +7,7 @@ import HeroSectionImage from "../../../public/assets/images/hero_section_img.png
 export default function Home() {
   return (
       <section
-          className="relative h-[500px] overflow-hidden rounded-lg bg-background md:shadow-xl">
+          className="relative h-[500px] overflow-hidden rounded-lg bg-background md:shadow-xl mt-24 md:mt-0">
           <div className="w-full z-10 h-full md:grid grid-cols-2 content-center max-w-screen-lg mx-auto sm:mt-28 md:mt-0">
               <div className="col-span-1 flex flex-col justify-center items-center">
                   <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">Mueed
