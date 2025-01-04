@@ -4,12 +4,12 @@ const Layout = ({children}: Readonly<{children: React.ReactNode}>) => {
     return (
         <>
             {/* Main body */}
-            <main>
+            <main className="max-w-screen-lg mx-auto">
                 {children}
             </main>
 
             {/* Footer or Copyrights */}
-            <footer>
+            <footer className="max-w-screen-lg mx-auto">
                 <p>Footer</p>
             </footer>
         </>
