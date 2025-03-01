@@ -20,7 +20,6 @@ import {
 } from "react-icons/si";
 import { IconType } from "react-icons";
 import { Marquee } from "./magicui/marquee";
-import { cn } from "@/lib/utils";
 
 interface Skill {
     id: number;
@@ -76,9 +75,6 @@ const skills: Skill[] = [
 ];
 
 const SkillsSection = () => {
-    const [isPaused, setIsPaused] = React.useState(false);
-    const handleMouseEnter = () => setIsPaused(true);
-    const handleMouseLeave = () => setIsPaused(false);
     return (
         <section className="mt-20 mx-4 space-y-4">
             <h1 className="font-mono text-xl md:text-5xl lg:text-4xl text-titleColor font-bold ">
