@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import Image, { StaticImageData } from "next/image";
@@ -8,10 +10,10 @@ import { projects } from "@/constants/projects";
 const ProjectSection = () => {
     return (
         <section className="mx-2" id="projects">
-            <h1 className="font-mono m-2 text-xl md:text-3xl lg:text-2xl text-titleColor font-bold ">
+            <h1 className="font-mono m-2 text-xl md:text-2xl text-titleColor font-bold ">
                 My Projects
             </h1>
-            <div className="w-full h-full grid grid-cols-3 gap-2 p-2">
+            <div className="w-full h-full grid  md:grid-cols-3 gap-2 p-2 space-y-2 md:space-y-0">
                 <Card className="w-full h-full row-span-2 col-span-2">
                     <CardHeader>
                         <AspectRatio ratio={16 / 9} className="bg-muted rounded-md">
@@ -27,7 +29,7 @@ const ProjectSection = () => {
                         <CardTitle>{projects[0].title}</CardTitle>
                         <CardDescription>{projects[0].description}</CardDescription>
                     </CardContent>
-                    <CardFooter className="grid grid-cols-6 items-center gap-2">
+                    <CardFooter className="grid grid-cols-4 md:grid-cols-5 items-center gap-2">
                         <ProjectTag tags={projects[0].projectTags} />
                     </CardFooter>
                 </Card>
@@ -37,11 +39,11 @@ const ProjectSection = () => {
                     imageSRC={projects[1].projectImage}
                     tags={projects[1].projectTags}
                 />
-                <SecondaryCard
-                    title={projects[2].title}
-                    description={projects[2].description}
-                    imageSRC={projects[2].projectImage}
-                    tags={projects[2].projectTags}
+                <CommonCard
+                    title={projects[3].title}
+                    description={projects[3].description}
+                    imageSRC={projects[3].projectImage}
+                    tags={projects[3].projectTags}
                 />
                 <CommonCard
                     title={projects[3].title}
@@ -51,18 +53,6 @@ const ProjectSection = () => {
                 />
                 <CommonCard
                     title={"Project Title 5"}
-                    description={projects[3].description}
-                    imageSRC={projects[3].projectImage}
-                    tags={projects[3].projectTags}
-                />
-                <CommonCard
-                    title={"Project Title 6"}
-                    description={projects[3].description}
-                    imageSRC={projects[3].projectImage}
-                    tags={projects[3].projectTags}
-                />
-                <CommonCard
-                    title={"Project Title 7"}
                     description={projects[3].description}
                     imageSRC={projects[3].projectImage}
                     tags={projects[3].projectTags}
@@ -88,22 +78,22 @@ const SecondaryCard = ({ title, description, imageSRC, tags }: CardInterface) =>
     return (
         <Card className="h-full row-span-2">
             <CardHeader>
-                <AspectRatio className="bg-muted rounded-md">
+                <AspectRatio ratio={16 / 8} className="bg-muted rounded-md">
                     <Image src={imageSRC} alt={title} className="h-full w-full object-contain" />
                 </AspectRatio>
             </CardHeader>
             <CardContent className="space-y-2">
                 <CardTitle>{title}</CardTitle>
-                <CardDescription>{description}</CardDescription>
+                <CardDescription className="hidden md:flex">{description}</CardDescription>
             </CardContent>
-            <CardFooter className="grid grid-cols-3 gap-2">
+            <CardFooter className="grid grid-cols-2 gap-2">
                 <ProjectTag tags={tags} />
             </CardFooter>
         </Card>
     );
 };
 
-const CommonCard = ({ title, imageSRC, tags }: CardInterface) => {
+const CommonCard = ({ title, description, imageSRC, tags }: CardInterface) => {
     return (
         <Card>
             <CardHeader>
@@ -113,8 +103,9 @@ const CommonCard = ({ title, imageSRC, tags }: CardInterface) => {
             </CardHeader>
             <CardContent className="space-y-1">
                 <CardTitle>{title}</CardTitle>
+                <CardDescription className="hidden md:flex">{description}</CardDescription>
             </CardContent>
-            <CardFooter className="grid grid-cols-3 gap-2">
+            <CardFooter className="grid grid-cols-2 gap-2">
                 <ProjectTag tags={tags} />
             </CardFooter>
         </Card>
@@ -133,7 +124,7 @@ const ProjectTag = ({ tags }: ProjectTags) => {
     return tags.map(({ id, name }) => (
         <Badge
             key={id}
-            className="cursor-pointer flex items-center justify-center"
+            className="cursor-pointer text-[8px] md:text-sm font-normal flex items-center justify-center"
             variant="outline"
         >
             {name}

@@ -77,9 +77,7 @@ const skills: Skill[] = [
 const SkillsSection = () => {
     return (
         <section className="mt-20 mx-2 space-y-4">
-            <h1 className="font-mono text-xl md:text-3xl lg:text-2xl text-titleColor font-bold ">
-                My Skills
-            </h1>
+            <h1 className="font-mono text-xl md:text-2xl text-titleColor font-bold ">My Skills</h1>
             <div className="mx-2 relative flex w-full flex-col items-center justify-center overflow-hidden">
                 <Marquee pauseOnHover repeat={40} className="[--duration:20s]">
                     {skills.map(({ id, Icon, label, color }) => (
