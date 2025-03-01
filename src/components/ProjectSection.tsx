@@ -33,22 +33,12 @@ const ProjectSection = () => {
                         <ProjectTag tags={projects[0].projectTags} />
                     </CardFooter>
                 </Card>
-                <div className="hidden md:flex">
-                    <SecondaryCard
-                        title={projects[1].title}
-                        description={projects[1].description}
-                        imageSRC={projects[1].projectImage}
-                        tags={projects[1].projectTags}
-                    />
-                </div>
-                <div className="md:hidden">
-                    <CommonCard
-                        title={projects[1].title}
-                        description={projects[1].description}
-                        imageSRC={projects[1].projectImage}
-                        tags={projects[1].projectTags}
-                    />
-                </div>
+                <SecondaryCard
+                    title={projects[1].title}
+                    description={projects[1].description}
+                    imageSRC={projects[1].projectImage}
+                    tags={projects[1].projectTags}
+                />
                 <CommonCard
                     title={projects[3].title}
                     description={projects[3].description}
