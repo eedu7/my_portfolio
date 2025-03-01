@@ -33,12 +33,22 @@ const ProjectSection = () => {
                         <ProjectTag tags={projects[0].projectTags} />
                     </CardFooter>
                 </Card>
-                <SecondaryCard
-                    title={projects[1].title}
-                    description={projects[1].description}
-                    imageSRC={projects[1].projectImage}
-                    tags={projects[1].projectTags}
-                />
+                <div className="hidden md:flex">
+                    <SecondaryCard
+                        title={projects[1].title}
+                        description={projects[1].description}
+                        imageSRC={projects[1].projectImage}
+                        tags={projects[1].projectTags}
+                    />
+                </div>
+                <div className="md:hidden">
+                    <CommonCard
+                        title={projects[1].title}
+                        description={projects[1].description}
+                        imageSRC={projects[1].projectImage}
+                        tags={projects[1].projectTags}
+                    />
+                </div>
                 <CommonCard
                     title={projects[3].title}
                     description={projects[3].description}
@@ -124,7 +134,7 @@ const ProjectTag = ({ tags }: ProjectTags) => {
     return tags.map(({ id, name }) => (
         <Badge
             key={id}
-            className="cursor-pointer text-[8px] md:text-sm font-normal flex items-center justify-center"
+            className="cursor-pointer text-[6px] p-1 md:text-sm font-normal flex items-center justify-center"
             variant="outline"
         >
             {name}
