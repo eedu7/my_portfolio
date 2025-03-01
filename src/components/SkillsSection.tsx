@@ -77,11 +77,11 @@ const skills: Skill[] = [
 const SkillsSection = () => {
     return (
         <section className="mt-20 mx-4 space-y-4">
-            <h1 className="font-mono text-xl md:text-5xl lg:text-4xl text-titleColor font-bold ">
+            <h1 className="font-mono text-xl md:text-3xl lg:text-2xll text-titleColor font-bold ">
                 My Skills
             </h1>
             <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-                <Marquee pauseOnHover className="[--duration:20s]">
+                <Marquee pauseOnHover repeat={40} className="[--duration:20s]">
                     {skills.map(({ id, Icon, label, color }) => (
                         <TooltipProvider key={id}>
                             <Tooltip>
@@ -103,7 +103,7 @@ const SkillsSection = () => {
                         </TooltipProvider>
                     ))}
                 </Marquee>
-                <Marquee reverse pauseOnHover className="[--duration:20s] w-full">
+                <Marquee reverse pauseOnHover repeat={40} className="[--duration:20s] w-full">
                     {skills.map(({ id, Icon, label, color }) => (
                         <TooltipProvider key={id}>
                             <Tooltip>
