@@ -76,34 +76,12 @@ const skills: Skill[] = [
 
 const SkillsSection = () => {
     return (
-        <section className="mt-20 mx-4 space-y-4">
-            <h1 className="font-mono text-xl md:text-3xl lg:text-2xll text-titleColor font-bold ">
+        <section className="mt-20 mx-2 space-y-4">
+            <h1 className="font-mono text-xl md:text-3xl lg:text-2xl text-titleColor font-bold ">
                 My Skills
             </h1>
-            <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+            <div className="mx-2 relative flex w-full flex-col items-center justify-center overflow-hidden">
                 <Marquee pauseOnHover repeat={40} className="[--duration:20s]">
-                    {skills.map(({ id, Icon, label, color }) => (
-                        <TooltipProvider key={id}>
-                            <Tooltip>
-                                <TooltipTrigger asChild>
-                                    <div className="flex w-full h-full flex-col justify-center items-center p-2 transition hover:scale-110 hover:shadow rounded">
-                                        <Icon color={color} className="size-4 md:size-8" />
-                                        <p
-                                            className="text text-[8px] md:text-sm tracking-widest mt-2 font-mono"
-                                            style={{ color: color }}
-                                        >
-                                            {label}
-                                        </p>
-                                    </div>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p>{label}</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
-                    ))}
-                </Marquee>
-                <Marquee reverse pauseOnHover repeat={40} className="[--duration:20s] w-full">
                     {skills.map(({ id, Icon, label, color }) => (
                         <TooltipProvider key={id}>
                             <Tooltip>
